@@ -1,5 +1,5 @@
-// Приём отключён до подключения проекта в организации v17baton-stack's Org.
+// Публичные настройки собственного проекта; серверные секреты здесь не хранятся.
 export const config = Object.freeze({
- createApplicationUrl: '',
- botUsername: ''
+ createApplicationUrl: 'https://pfenvpbcfhdxkkuomevj.supabase.co/functions/v1/create-application',
+ botUsername: 'university_future_2027_bot'
 });
