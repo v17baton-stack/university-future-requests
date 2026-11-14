@@ -1,5 +1,5 @@
-// Собственный обработчик размещён. Имя бота появится после его настройки.
+// Приём отключён до подключения проекта в организации v17baton-stack's Org.
 export const config = Object.freeze({
- createApplicationUrl: 'https://riwmfphwfoszffrpzwye.supabase.co/functions/v1/create-application',
+ createApplicationUrl: '',
  botUsername: ''
 });
