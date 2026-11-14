@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//University Future//Conference//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:university-future-20270319@v17baton-stack.github.io
+DTSTAMP:20261114T090000Z
+DTSTART:20270319T070000Z
+DTEND:20270319T153000Z
+SUMMARY:Университет будущего — конференция
+DESCRIPTION:10:00–18:30 МСК. Площадка уточняется. Заметка о дате\, не регистрация.
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR

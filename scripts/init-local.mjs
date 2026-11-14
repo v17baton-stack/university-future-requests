@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {randomBytes} from 'node:crypto';
+const local=path.resolve('.local');fs.mkdirSync(local,{recursive:true});
+const file=path.join(local,'secrets.env');const content=fs.existsSync(file)?fs.readFileSync(file,'utf8'):'';
+const keys=new Set(content.split(/\r?\n/).filter(x=>!x.startsWith('#')).map(x=>x.split('=')[0]));
+const defaults={BOT_TOKEN:'',BOT_USERNAME:'',ADMIN_CHAT_ID:'',SITE_URL:'https://v17baton-stack.github.io/university-future-requests/',TG_WEBHOOK_SECRET:randomBytes(36).toString('base64url'),SETUP_SECRET:randomBytes(36).toString('base64url'),FORM_SECRET:randomBytes(36).toString('base64url')};
+const missing=Object.entries(defaults).filter(([k])=>!keys.has(k)).map(([k,v])=>`${k}=${v}`);
+if(missing.length)fs.appendFileSync(file,(content&&!content.endsWith('\n')?'\n':'')+missing.join('\n')+'\n',{mode:0o600});
+console.log('Локальный файл секретов подготовлен. Значения не выводятся.');

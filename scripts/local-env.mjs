@@ -1,0 +1,3 @@
+import fs from 'node:fs';
+export function readLocal(){const file='.local/secrets.env';if(!fs.existsSync(file))throw Error('Сначала подготовьте .local/secrets.env');return Object.fromEntries(fs.readFileSync(file,'utf8').split(/\r?\n/).filter(line=>line&&!line.startsWith('#')&&line.includes('=')).map(line=>{const at=line.indexOf('=');return[line.slice(0,at).trim(),line.slice(at+1).trim()];}));}
+export function writeLocal(values){const old=readLocal();const next={...old,...values};fs.writeFileSync('.local/secrets.env',Object.entries(next).map(([key,value])=>`${key}=${value}`).join('\n')+'\n',{mode:0o600});}
