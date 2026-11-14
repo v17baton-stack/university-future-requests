@@ -1,5 +1,5 @@
-// Только публичные настройки. Подключение появится после настройки вашего Supabase и бота.
+// Собственный обработчик размещён. Имя бота появится после его настройки.
 export const config = Object.freeze({
- createApplicationUrl: '',
+ createApplicationUrl: 'https://riwmfphwfoszffrpzwye.supabase.co/functions/v1/create-application',
  botUsername: ''
 });
